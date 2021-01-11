@@ -1,12 +1,15 @@
+import java.util.HashMap;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Board {
     private static int BOARD_SIZE;
     private static int currentPos = 0;
+    private static HashMap<Integer, Integer> snake;
 
-    public Board(int boardSize) {
+    public Board(int boardSize, HashMap<Integer, Integer> snakes) {
         BOARD_SIZE = boardSize;
+        snake = snakes;
     }
 
     public int rollDice() {
@@ -34,6 +37,11 @@ public class Board {
 
             System.out.println("Dice Value = " + diceValue);
             movePlayer(diceValue);
+
+            if (snake.get(currentPos) != null) {
+                System.out.println("Snake bite");
+                currentPos = snake.get(currentPos);
+            }
             System.out.println("Player moved to: " + currentPos);
             if (currentPos == BOARD_SIZE) {
                 System.out.println("Player won");
