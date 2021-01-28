@@ -10,7 +10,8 @@ public class Dice {
     int rollDice() {
         Random random = new Random();
         if (isDiceCrooked) {
-            return 1 + random.nextInt(3) * 2;
+            return  ((random.nextInt(3) + 1)*2);
+
         } else {
             return random.nextInt(6) + 1;
         }

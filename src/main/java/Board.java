@@ -6,15 +6,14 @@ import java.util.Scanner;
 class Board {
     private final Dice dice;
     private Queue<Player> nextPlayer;
-    static Map<Integer, Integer> snakes = new HashMap<>();
-
+    private static Map<Integer, Integer> snakes = new HashMap<>();
     private Map<Player, Integer> currentPosition;
     int boardSize;
 
     Board(Dice dice, Queue<Player> nextPlayer, HashMap<Integer, Integer> snakes, Map<Player, Integer> currentPosition, int boardSize) {
         this.dice = dice;
         this.nextPlayer = nextPlayer;
-        this.snakes = snakes;
+        Board.snakes = snakes;
         this.currentPosition = currentPosition;
         this.boardSize = boardSize;
     }
