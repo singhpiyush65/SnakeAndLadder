@@ -29,6 +29,7 @@ class Board {
             if (nextTile > boardSize) nextPlayer.offer(player);
             else if (nextTile == boardSize) {
                 System.out.println(player.getName() + " won the game");
+                System.exit(0);
             } else {
                 int[] nextPosition = new int[1];
                 boolean[] b = new boolean[1];
